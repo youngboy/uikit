@@ -13,8 +13,13 @@ import {
   Relative,
   Absolute,
   Fixed,
-  Sticky
-} from '../src/index'
+  Sticky,
+
+  Preset,
+  Global,
+
+  theme
+} from '../src'
 
 const renderJSON = el => TestRenderer.create(el).toJSON()
 
@@ -64,7 +69,6 @@ describe('Box', () => {
     expect(json).toHaveStyleRule('width', '100%')
   })
 
-  // sorry, clean-tag implementations don't work well with SC `as` prop
   test('removes style props from html', () => {
     const json = renderJSON(
       <Box
@@ -187,4 +191,21 @@ describe('Position', () => {
   })
 })
 
+describe('Preset', () => {
+  test('Preset renders', () => {
+    const json = renderJSON(
+      <Preset theme={theme} />
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
 
+// FIXME: Not rendering anything ...
+describe.skip('Global', () => {
+  test('Global renders', () => {
+    const json = renderJSON(
+      <Global theme={theme} />
+    )
+    expect(json).toMatchSnapshot()
+  })
+})
