@@ -11,7 +11,7 @@ UIkit is set of react component that highly customize-able
 
 - [x] Base
   - [x] support `css` props
-  - [x] blacklist
+  - [x] integrate clean tag
   - [x] AllStyle
   - [x] Box --  props: `space, width, fontSize, color`
     - [x] Flex -- props: `flex`
@@ -24,31 +24,31 @@ UIkit is set of react component that highly customize-able
 
 ## Theme
 
-- [] Provider
-- [] Global
-- [] Preset
-- [] Token set
-- [] Plugin ecosystem
+- [ ] Provider
+- [ ] Global
+- [ ] Preset
+- [ ] Token set
+- [ ] Plugin ecosystem
 
 ## Components
 
-- [] Link
-- [] Button
-- [] Card
-- [] Hide
-- [] Overlay
-- [] Backdrop
-- [] Image
-- [] Heading
-- [] Divider
+- [ ] Link
+- [ ] Button
+- [ ] Card
+- [ ] Hide
+- [ ] Overlay
+- [ ] Backdrop
+- [ ] Image
+- [ ] Heading
+- [ ] Divider
 
 ## Interactive
 
-- [] Segment
-- [] Dialog
-- [] MenuButton
+- [ ] Segment
+- [ ] Dialog
+- [ ] MenuButton
 
 ## Demo site
 
-- Editable code sample
-- Theme generator
+- [ ] Editable code sample
+- [ ] Theme generator
