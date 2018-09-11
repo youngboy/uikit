@@ -24,14 +24,14 @@ UIkit is set of react component that highly customize-able
 
 ## Theme
 
-- [ ] Provider
-- [ ] Global
-- [ ] Preset
-- [ ] Token set
+- [x] Provider
+- [x] Choices
+- [x] Variant
 - [ ] Plugin ecosystem
 
 ## Components
 
+- [x] Global
 - [ ] Link
 - [ ] Button
 - [ ] Card
