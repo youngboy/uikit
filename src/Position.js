@@ -1,0 +1,47 @@
+import styled from 'styled-components'
+import {
+  position,
+  zIndex,
+  top,
+  right,
+  bottom,
+  left
+} from 'styled-system'
+import Box from './Box'
+
+const css = props => props.css
+
+const Position = styled(Box)(
+  position,
+  zIndex,
+  top,
+  right,
+  bottom,
+  left,
+  css
+)
+export default Position
+
+export const Relative = styled(Position)([])
+
+Relative.defaultProps = {
+  position: 'relative'
+}
+
+export const Absolute = styled(Position)([])
+
+Absolute.defaultProps = {
+  position: 'absolute'
+}
+
+export const Fixed = styled(Position)([])
+
+Fixed.defaultProps = {
+  position: 'fixed'
+}
+
+export const Sticky = styled(Position)([])
+
+Sticky.defaultProps = {
+  position: 'sticky'
+}

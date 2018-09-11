@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "benchmarks",
+  "version": "0.8.6",
+  "scripts": {
+    "build": "mkdir -p dist && cp -f index.html dist/index.html && ./node_modules/.bin/webpack-cli --config ./webpack.config.js",
+    "prebenchmarks": "yarn run build",
+    "benchmarks": "node run-headless.js"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "d3-scale-chromatic": "^1.2.0",
+    "emotion": "^9.2.5",
+    "fela": "^6.1.9",
+    "react": "^16.5.0",
+    "react-art": "^16.4.1",
+    "react-dom": "^16.3.2",
+    "react-fela": "^7.3.1",
+    "react-native-web": "^0.8.10",
+    "styled-components": "^4.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-react-native-web": "0.8.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "css-loader": "^0.28.11",
+    "puppeteer": "^1.8.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.8.1",
+    "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-cli": "^2.1.3"
+  }
+}

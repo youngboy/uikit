@@ -1,0 +1,56 @@
+{
+  "name": "uikit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "youngboy",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.5.0",
+    "jest-styled-components": "^6.1.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-test-renderer": "^16.5.0",
+    "styled-components": "^4.0.0-beta.1"
+  },
+  "dependencies": {
+    "html-tags": "^2.0.0",
+    "styled-system": "^3.0.3"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "testMatch": [
+      "**/test/**/*.js"
+    ],
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "coverageReporters": [
+      "html",
+      "lcov"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
+}
