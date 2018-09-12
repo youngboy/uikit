@@ -5,26 +5,27 @@ UIkit is set of react component that highly customize-able
 - Theme support, generated from design token
 - Compostable with props inherit
 - Convenient props accessiable
-- Accessiable feature enable
+- Accessiability feature enable
 
 ## Primitive
 
 - [x] Base
   - [x] support `css` props
   - [x] integrate clean tag
-  - [x] AllStyle
   - [x] Box --  props: `space, width, fontSize, color`
     - [x] Flex -- props: `flex`
     - [x] Relative -- display: `relative`
     - [x] Fixed -- display: `fixed`
     - [x] Static -- display: `static`
     - [x] Sticky -- display: `sticky`
+- [x] AllStyle
 - [x] Compose
   - support `from`
 
 ## Theme
 
 - [x] Provider
+- [x] createTheme
 - [x] Choices
 - [x] Variant
 - [ ] Plugin ecosystem
@@ -32,14 +33,15 @@ UIkit is set of react component that highly customize-able
 ## Components
 
 - [x] Global
-- [ ] Link
-- [ ] Button
+- [x] Link
+- [x] Heading
+- [x] Button
+- [x] Text
 - [ ] Card
 - [ ] Hide
 - [ ] Overlay
 - [ ] Backdrop
 - [ ] Image
-- [ ] Heading
 - [ ] Divider
 
 ## Interactive

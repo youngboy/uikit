@@ -7,4 +7,23 @@ function link(choice) {
   }
 }
 
-export default link
+function status(choice) {
+  return {
+    active: {
+
+    },
+    disable: {
+
+    }
+  }
+}
+
+export default function(choice) {
+  return {
+    base: {
+      textDecoration: 'none'
+    },
+    variant: link(choice),
+    status: status(choice)
+  }
+}

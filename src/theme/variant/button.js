@@ -1,4 +1,4 @@
-function button(choice) {
+function variant(choice) {
   return {
     default: {
       color: choice.colors.default,
@@ -6,7 +6,6 @@ function button(choice) {
       borderRadius: '.5rem',
       border: `.125rem ${choice.colors.default} solid`,
       marginRight: '1rem',
-      ...choice.hover.dim
     },
   }
 }
@@ -21,4 +20,24 @@ function buttonSize() {
   }
 }
 
-export { button, buttonSize }
+const button = (choice) => {
+  return {
+    base: {
+      appearance: 'none',
+      display: 'inline-block',
+      textAlign: 'center',
+      lineHeight: 'inherit',
+      textDecoration: 'none',
+      '&.focus': {
+        outline: 'none',
+      },
+
+      ...choice.hover.dim
+    },
+    variant: variant(choice),
+    size: buttonSize(choice)
+  }
+}
+
+
+export default button

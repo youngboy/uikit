@@ -1,12 +1,5 @@
-function heading(choice) {
-  const defaultV = {
-    fontWeight: choice.fontWeights.heading,
-    lineHeight: choice.lineHeights.heading,
-    fontSize: choice.fontSizes.heading,
-    padding: 0,
-  }
+function variant(choice) {
   return {
-    default: defaultV,
     h1: {
       fontSize: choice.fontSizes.h1,
     },
@@ -24,5 +17,18 @@ function heading(choice) {
     }
   }
 }
+
+function heading(choice) {
+  return {
+    base: {
+      fontWeight: choice.fontWeights.heading,
+      lineHeight: choice.lineHeights.heading,
+      fontSize: choice.fontSizes.heading,
+      padding: 0,
+    },
+    variant: variant(choice)
+  }
+}
+
 
 export default heading

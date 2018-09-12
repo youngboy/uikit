@@ -5,8 +5,13 @@ import { themed, cleanTag } from '../utils'
 
 const presetVariant =  variant({
   prop: 'variant',
-  key: 'preset'
+  key: 'preset.variant'
 })
+
+
+// TODO: remove preset
+// - inherit css rules can be used by global component
+// wait untill Global component fully tested
 
 /**
  * Preset designed for higher level component that
@@ -16,7 +21,7 @@ const presetVariant =  variant({
  *     Or other cases that can't dynamic map react component to generated html tag
  */
 const Preset = styled(cleanTag('div'))(
-  themed('rootPreset'),
+  themed('preset.base'),
   presetVariant
 )
 

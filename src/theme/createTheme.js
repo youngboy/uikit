@@ -23,18 +23,6 @@ export default function( extraChoice={} ) {
       }
     },
 
-    // TODO: remove preset
-    // - inherit css rules can be used by global component
-    // wait untill Global component fully tested
-    rootPreset: {
-      color: choice.colors.default,
-      background: choice.colors.defaultBg,
-      fontFamily: choice.fonts.default,
-      fontSize: choice.fontSizes.text,
-      lineHeight: choice.lineHeights.copy,
-      wordWrap: 'break-word',
-    },
-
     ...defaultVariant(choice),
 
     // convenient props accessed from styled-system

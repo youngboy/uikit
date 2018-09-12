@@ -36,6 +36,7 @@ tags.forEach(tag => {
   Tag[tag].displayName = 'Clean.' + tag
 })
 
+// FXIME: apply blacklist from props if exist
 export const cleanTag = (Cmp) => {
   return (props) => (
     <Cmp {...omit(props, styledBlackList)} />

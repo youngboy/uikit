@@ -1,4 +1,4 @@
-export default function preset(choice) {
+function variant(choice) {
   return {
     default: {
       // preset rule by tag name
@@ -39,5 +39,19 @@ export default function preset(choice) {
         padding: '0.125rem 20px 0.125rem 30px',
       }
     }
+  }
+}
+
+export default function preset(choice) {
+  return {
+    base: {
+      color: choice.colors.default,
+      background: choice.colors.defaultBg,
+      fontFamily: choice.fonts.default,
+      fontSize: choice.fontSizes.text,
+      lineHeight: choice.lineHeights.copy,
+      wordWrap: 'break-word',
+    },
+    variant: variant(choice)
   }
 }
