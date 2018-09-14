@@ -52,5 +52,10 @@ UIkit is set of react component that highly customize-able
 
 ## Demo site
 
-- [ ] Editable code sample
-- [ ] Theme generator
+- [x] Editable code sample
+- [x] Docs for components
+- [x] Typograhpy
+- [X] Props table
+- [x] Theme selector
+- [x] Theme generator
+- [x] Styling docs site

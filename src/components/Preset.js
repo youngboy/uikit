@@ -1,13 +1,13 @@
 import styled from 'styled-components'
-import { variant } from 'styled-system'
 
-import { themed, cleanTag } from '../utils'
+import { cleanTag, themed, variant, injectDisplay } from '../utils'
 
 const presetVariant =  variant({
   prop: 'variant',
   key: 'preset.variant'
 })
 
+const themedPreset = themed('preset.base')
 
 // TODO: remove preset
 // - inherit css rules can be used by global component
@@ -21,9 +21,18 @@ const presetVariant =  variant({
  *     Or other cases that can't dynamic map react component to generated html tag
  */
 const Preset = styled(cleanTag('div'))(
-  themed('preset.base'),
+  themedPreset,
   presetVariant
 )
+
+Preset.displayName = 'Preset'
+
+Preset.propTypes = {
+  ...injectDisplay({
+    ...themedPreset.propTypes,
+    ...presetVariant.propTypes,
+  }, Preset)
+}
 
 Preset.defaultProps = {
   variant: 'default'

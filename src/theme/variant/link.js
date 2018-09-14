@@ -2,8 +2,11 @@
 function link(choice) {
   return {
     default: {
-      ...choice.hover.dim
+      color: choice.colors.default,
     },
+    nav: {
+      color: choice.colors.default,
+    }
   }
 }
 
@@ -21,7 +24,6 @@ function status(choice) {
 export default function(choice) {
   return {
     base: {
-      textDecoration: 'none'
     },
     variant: link(choice),
     status: status(choice)

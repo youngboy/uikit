@@ -18,8 +18,9 @@ import {
   Preset,
   Global,
 
-  theme
 } from '../src'
+
+import { BlankTheme } from '../src/theme'
 
 const renderJSON = el => TestRenderer.create(el).toJSON()
 
@@ -76,7 +77,6 @@ describe('Box', () => {
         fontSize={3}
         color='blue'
         bg='tomato'
-        css={{}}
       />
     )
     expect(json.props.width).toBeUndefined()
@@ -194,7 +194,7 @@ describe('Position', () => {
 describe('Preset', () => {
   test('Preset renders', () => {
     const json = renderJSON(
-      <Preset theme={theme} />
+      <Preset theme={BlankTheme} />
     )
     expect(json).toMatchSnapshot()
   })
@@ -204,7 +204,7 @@ describe('Preset', () => {
 describe.skip('Global', () => {
   test('Global renders', () => {
     const json = renderJSON(
-      <Global theme={theme} />
+      <Global theme={BlankTheme} />
     )
     expect(json).toMatchSnapshot()
   })

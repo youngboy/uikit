@@ -8,8 +8,8 @@ import {
   left
 } from 'styled-system'
 import Box from './Box'
+import { injectDisplay } from '../utils'
 
-const css = props => props.css
 
 const Position = styled(Box)(
   position,
@@ -17,10 +17,23 @@ const Position = styled(Box)(
   top,
   right,
   bottom,
-  left,
-  css
+  left
 )
 export default Position
+
+Position.displayName = 'Position'
+Position.propTypes = {
+  ...Box.propTypes,
+  ...injectDisplay({
+    ...position.propTypes,
+    ...zIndex.propTypes,
+    ...top.propTypes,
+    ...right.propTypes,
+    ...bottom.propTypes,
+    ...left.propTypes
+  }, Position)
+}
+
 
 export const Relative = styled(Position)([])
 

@@ -10,12 +10,12 @@ import defaultVariant from './variant'
  * - [ ] can be visulize and easy to manage
  * - [ ] allow minify theme object that only in used... ?
  */
-export default function( extraChoice={} ) {
+export default function(extraChoice={}) {
 
   const choice = merge({}, defaultChoice, extraChoice)
 
   const theme = {
-    breakpoints: [choice.mobileDevice, choice.tableLetDevice],
+    breakpoints: [choice.mobileDevice, choice.tabletDevice],
 
     global: {
       html: {
@@ -25,21 +25,26 @@ export default function( extraChoice={} ) {
 
     ...defaultVariant(choice),
 
+    ...choice
     // convenient props accessed from styled-system
-    ...defaultChoice.space,
-    ...defaultChoice.fontSizes,
-    ...defaultChoice.colors,
-    ...defaultChoice.fonts,
-    ...defaultChoice.lineHeights,
-    ...defaultChoice.fontWeights,
-    ...defaultChoice.letterSpacings,
-    ...defaultChoice.maxWidths,
-    ...defaultChoice.minWidths,
-    ...defaultChoice.radii,
-    ...defaultChoice.borders,
-    ...defaultChoice.shadows,
-    ...defaultChoice.opacity,
+    // ...defaultChoice.space,
+    // ...defaultChoice.fontSizes,
+    // ...defaultChoice.colors,
+    // ...defaultChoice.fonts,
+    // ...defaultChoice.lineHeights,
+    // ...defaultChoice.fontWeights,
+    // ...defaultChoice.letterSpacings,
+    // ...defaultChoice.maxWidths,
+    // ...defaultChoice.minWidths,
+    // ...defaultChoice.radii,
+    // ...defaultChoice.borders,
+    // ...defaultChoice.shadows,
+    // ...defaultChoice.opacity,
 
+  }
+
+  const extendChoice = (choice) => {
+    return merge({}, theme, choice)
   }
 
   const extend = (extendedDecision) => {
@@ -49,5 +54,6 @@ export default function( extraChoice={} ) {
   return {
     theme,
     extend,
+    extendChoice
   }
 }

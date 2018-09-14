@@ -3,43 +3,13 @@
 exports[`Global Global renders 1`] = `null`;
 
 exports[`Preset Preset renders 1`] = `
-.c0 pre {
-  font-family: Consolas,monaco,monospace;
-  overflow-x: auto;
-  overflow-y: hidden;
-  overflow: scroll;
-  color: #000;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-  background: #f3f3f3;
-  padding: 1rem;
-  margin: .5rem 0;
-}
-
-.c0 code {
-  display: inline-block;
-  padding-left: 2px;
-  padding-right: 2px;
-  vertical-align: baseline;
-}
-
-.c0 pre > code {
-  font-family: Consolas,monaco,monospace;
-}
-
-.c0 blockquote {
-  border-left: 2px solid #d5008f;
-  color: #666;
-  margin: 1.5em 0;
-  padding: 0.125rem 20px 0.125rem 30px;
+.c0 {
+  color: #333;
+  background: #fff;
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",helvetica,"PingFang SC-Thin","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
 <div

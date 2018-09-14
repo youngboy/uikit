@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { styles } from 'styled-system'
 
-import { cleanTag } from '../utils'
+import { cleanTag, cloneType } from '../utils'
 
 const css = props => props.css
 
@@ -18,6 +19,16 @@ const Base = styled(cleanTag('div'))(
 export const AllStyle = styled(Base)(
   ...Object.keys(styles).map(s => styles[s])
 )
+
+Base.propTypes = {
+  css: cloneType(PropTypes.string, {
+    prop: 'css',
+    displayName: 'Base',
+    themeKey: null,
+  })
+}
+
+Base.displayName = 'Base'
 
 export default Base
 
