@@ -8,7 +8,7 @@ import styled, { ThemeConsumer } from 'styled-components'
 // import ReactJson from 'react-json-view'
 import ReactJson from './json-view'
 
-import NavLinks from './NavLinks'
+import NavLinks, { NavLink } from './NavLinks'
 import Layout from './go-layout'
 import * as components from '../src'
 import {
@@ -84,6 +84,10 @@ export class Root extends React.Component {
               filter={route => nav.includes(route.name)}
               order={nav}
             {...this.props} />
+            <NavLink
+              to='https://github.com/youngboy/uikit'
+              children='GitHub'
+            />
           </Layout.Sidebar>
           <Layout.Main>
               {this.props.children}

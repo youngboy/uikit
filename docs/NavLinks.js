@@ -13,9 +13,24 @@ const sort = (routes, order) => sortby(routes, route => {
   return index < 0 ? Infinity : index
 })
 
-export const NavLink = ({ href, ...props}) => isAbsolute(href)
-    ? <a {...props} href={href} />
-    : <StyledLink variant='nav' as={Link} {...props} to={href} />
+export const NavLink = ({ to, ...props}) => {
+  let Tag = Link
+  const extraProps = {}
+  if (isAbsolute(to)) {
+    Tag = 'a'
+    extraProps.href = to
+    extraProps.target = '_blank'
+  } else {
+    extraProps.to = to
+  }
+  Tag === 'a'
+  return <StyledLink variant='nav'
+          as={Tag}
+          {...props}
+          {...extraProps}
+          css={'display: block;'}
+         />
+}
 
 export const NavLinks = ({
   routes = [],
@@ -31,8 +46,7 @@ export const NavLinks = ({
         <NavLink
           key={route.key}
           {...props}
-          css={'display: block;'}
-          href={route.path}
+          to={route.path}
           exact={route.exact}
           children={route.name}
         />
