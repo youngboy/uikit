@@ -5,18 +5,23 @@ import React from 'react'
 let ReactJson = null
 
 export default class JsonEditor extends React.Component{
+  state = {
+    loaded: false
+  }
+
   componentDidMount() {
      require.ensure(
        ['react-json-view'],
-       function() {
+       () => {
          try {
           ReactJson = require('react-json-view').default
+          this.setState({ loaded: true })
         } catch(err) { console.log('react-json-view:', err) }
       })
   }
   render () {
     if (ReactJson == null) {
-      return "Unable to load content"
+      return "Loading..."
     }
     return <ReactJson {...this.props} />
   }
