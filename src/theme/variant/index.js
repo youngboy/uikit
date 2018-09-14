@@ -9,7 +9,6 @@ const defaultVariant = (choice) => {
     button: button(choice),
     heading: heading(choice),
     link: link(choice),
-    linkStatus: link(choice),
   }
 }
 

@@ -1,29 +1,9 @@
 module.exports = {
   presets: [
-    '@babel/react',
+    [ '@babel/env', { loose: true } ],
+    '@babel/react'
   ],
-  env: {
-    test: {
-      presets: [
-        '@babel/env'
-      ],
-    },
-    cjs: {
-      presets: [
-        [ '@babel/env', {
-          targets: {
-            node: true
-          }
-        } ]
-      ]
-    },
-    es: {
-      presets: [
-        [ '@babel/env', {
-          loose: true,
-          modules: false
-        } ]
-      ]
-    },
-  }
+  plugins: [
+    "styled-components"
+  ]
 }

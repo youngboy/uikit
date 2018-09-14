@@ -1,0 +1,101 @@
+import {
+  Base,
+  Box,
+  Flex,
+  Position,
+  Relative,
+  Fixed,
+  Absolute,
+  Sticky,
+  AllStyle,
+  Compose
+} from '../src'
+
+
+import { Page, ComponentDoc } from './layout'
+
+export default Page
+
+export const name = 'Primitve'
+
+# Primitive
+
+Primitive are component mainly for layout and for other components which are build on top of.
+
+## Base
+
+Base component aollow to pass inline css props anytime
+
+```.jsx
+<Base css='background: red'>base</Base>
+```
+
+<ComponentDoc src={Base} />
+
+## Box
+
+### Extends
+
+- `Base`
+
+```.jsx
+<Box bg='red' width='50%'>box</Box>
+<Box mt={3} p={2} color='gold' fontSize='3'
+      width='25%'
+      bg='purple'>Hello</Box>
+```
+
+<ComponentDoc src={Box} />
+
+
+
+## Flex
+
+Responsive flexbox layout component
+
+### Extends
+
+- `Box`
+
+```.jsx
+<Flex>
+  <Flex justifyContent='center' bg='red' mr='1px' flex={1}>1</Flex>
+  <Flex justifyContent='center' bg='red' mr='1px' flex={2}>1</Flex>
+  <Flex justifyContent='center' bg='red' mr='1px' flex={4}>1</Flex>
+</Flex>
+```
+
+<ComponentDoc src={Flex} />
+
+
+## Position
+
+### Extends
+
+- `Box`
+
+```.jsx
+<Box bg='black'>
+  <Relative left='10px' top='10px' width='50px' height='50px' bg='red' />
+</Box>
+```
+
+<ComponentDoc src={Position} />
+
+## AllStyle
+
+Sometimes using `Base` is not enough, `AllStyle` enable you to lookup value from `theme` object.
+
+Use it sparingly for performance concerns.
+
+```.jsx
+<AllStyle widht={1} overflow='scroll' height='45px'>
+  <ul>
+    <li>margin</li>
+    <li>margin-top</li>
+    <li>margin-buttom</li>
+    <li>margin-left</li>
+    <li>margin-right</li>
+  </ul>
+</AllStyle>
+```

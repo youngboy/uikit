@@ -1,0 +1,40 @@
+import { Box, Button, Heading } from '../src'
+import { Root, Page } from './layout'
+
+export default Page
+
+export { Root }
+export const name = 'Home'
+
+# UIkit
+
+UIkit is set of react component that highly customize-able stylings with theme & style props.
+
+- React CSS-in-JSS feautre
+- Design system theme, with some plugins out of box to import
+- Style props support from [Styled System](http://jxnblk.com/styled-system/)
+
+
+## Getting started
+
+```bash
+npm i uikit
+```
+
+```jsx
+import { withTheme, GoTheme } from 'uikit/theme'
+import { Box } from 'uikit'
+
+const UI = withTheme(GoTheme)
+
+function App() {
+  return <UI>
+    <Box bg='black' color='white'>Hello world</Box>
+  </UI>
+}
+```
+
+## Thanks
+
+- [Styled System](http://jxnblk.com/styled-system/)
+- [mdx-go](https://jxnblk.com/mdx-go/)

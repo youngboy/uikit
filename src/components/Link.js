@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { variant } from 'styled-system'
 
 import { Box } from '../primitive'
-import { themed } from '../utils'
+import { themed, variant, injectDisplay } from '../utils'
 
 
 const linkVariant = variant({
@@ -15,15 +14,28 @@ const linkStatusVariant = variant({
   key: 'link.status'
 })
 
+const themedLink = themed('link.base')
 
 const Link = styled(Box)(
-  themed('link.base'),
+  themedLink,
   linkVariant,
   linkStatusVariant
 )
 
+Link.displayName = 'Link'
+
+Link.propTypes = {
+  ...Box.propTypes,
+  ...injectDisplay({
+    ...linkVariant.propTypes,
+    ...linkStatusVariant.propTypes,
+    ...themedLink.propTypes
+  }, Link)
+}
+
 Link.defaultProps = {
-  as: 'a'
+  as: 'a',
+  variant: 'default'
 }
 
 export default Link

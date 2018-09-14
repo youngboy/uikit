@@ -4,11 +4,14 @@ import {
   color,
   width,
   fontSize,
+  textAlign,
   maxWidth,
   maxHeight,
   height,
 } from 'styled-system'
 import Base from './Base'
+import { injectDisplay } from '../utils'
+
 
 const Box = styled(Base)(
   space,
@@ -18,16 +21,22 @@ const Box = styled(Base)(
   color,
   maxHeight,
   maxWidth,
+  textAlign
 )
 
+Box.displayName = 'Box'
 Box.propTypes = {
-  ...space.propTypes,
-  ...width.propTypes,
-  ...height.propTypes,
-  ...fontSize.propTypes,
-  ...color.propTypes,
-  ...maxHeight.propTypes,
-  ...maxWidth.propTypes
+  ...Base.propTypes,
+  ...injectDisplay({
+    ...textAlign.propTypes,
+    ...space.propTypes,
+    ...width.propTypes,
+    ...height.propTypes,
+    ...fontSize.propTypes,
+    ...color.propTypes,
+    ...maxHeight.propTypes,
+    ...maxWidth.propTypes
+  }, Box)
 }
 
 export default Box

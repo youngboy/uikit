@@ -1,0 +1,68 @@
+import {
+  Button,
+  Heading,
+  Link,
+  Preset,
+  theme
+} from '../src'
+import { Page, ThemeInfo, ComponentDoc, PropsTable } from './layout'
+
+export default Page
+
+export const name = 'Component'
+
+# Component
+
+## Button
+
+### Extends
+
+- `Box`
+
+```.jsx
+<Button>Click</Button>
+```
+
+<PropsTable src={Button} />
+
+
+## Link
+
+### Extends
+
+- `Box`
+
+
+```.jsx
+<Link href='#'>Link</Link>
+```
+
+<PropsTable src={Link} />
+
+## Heading
+
+### Extends
+
+- `Text`
+
+
+```.jsx
+<Heading>Heading level 2</Heading>
+```
+
+<PropsTable src={Heading} />
+
+## Preset
+
+Preset is suppose to manage plain html tag styling in scoped div parent element. Useful for generated html snippets like markdown.
+
+```.jsx
+<Preset>
+  <code>code</code>
+  <pre>pre</pre>
+  <hr />
+</Preset>
+```
+
+<PropsTable src={Preset} />
+
