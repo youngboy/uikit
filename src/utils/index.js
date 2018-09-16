@@ -33,13 +33,23 @@ export const injectDisplay = (props, cmp) => {
 export const themed = key => {
   const fn = props => get(props.theme, key) || null
   fn.propTypes = {
-    'theme': cloneType(PropTypes.object, {
+    theme: cloneType(PropTypes.object, {
       prop: 'theme',
       themeKey: key,
     })
   }
   return fn
 }
+
+export const css = props => props.css
+css.propsTypes = {
+  css: cloneType(PropTypes.string, {
+    prop: 'css',
+    displayName: 'Base',
+    themeKey: null,
+  })
+}
+
 
 export const variant = ({
   key,

@@ -4,9 +4,6 @@ function link(choice) {
     default: {
       color: choice.colors.default,
     },
-    nav: {
-      color: choice.colors.default,
-    }
   }
 }
 
@@ -15,9 +12,6 @@ function status(choice) {
     active: {
 
     },
-    disable: {
-
-    }
   }
 }
 

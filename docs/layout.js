@@ -1,59 +1,60 @@
 import React from 'react'
 import {
   Pagination,
-  ScrollTop,
   ComponentProvider,
+  ScrollTop,
   Head,
 } from 'mdx-go'
 import styled, { ThemeConsumer } from 'styled-components'
-// import ReactJson from 'react-json-view'
 import ReactJson from './json-view'
 
 import NavLinks, { NavLink } from './NavLinks'
 import Layout from './go-layout'
 import * as components from '../src'
+import { Heading, Link, Button } from '../src'
 import {
   withTheme,
-  RockTheme,
+  TachyonsTheme,
   GoTheme,
   BlankTheme
 } from '../src/theme'
 import { get } from '../src/utils'
 
 const ActionRoot = styled('div')({
-  marginRight: '1rem',
-  display: 'flex',
-  marginTop: '20px',
-  width: '24rem'
 })
 
-const Action = styled(components.Button)({
-  flex: '1',
+const Action = styled(Button)({
   marginRight: '0.5rem',
+  fontSize: '0.85rem',
+  padding: '0.3rem 1rem'
 })
 
 const nav = [
   'Home',
+  'Typography',
   'Primitve',
   'Component',
-  'Typography',
   'Theme',
 ]
 
-const themeList = [{
-  name: 'Blank',
-  value: BlankTheme,
-}, {
-  name: 'Rock',
-  value: RockTheme
-}, {
+const themeList = [
+  {
   name: 'Mdx-go',
   value: GoTheme
-}]
+  },
+  {
+  name: 'Tachyons',
+  value: TachyonsTheme
+  },
+  {
+  name: 'Blank',
+  value: BlankTheme,
+  },
+]
 export class Root extends React.Component {
 
   state = {
-    index: 2,
+    index: 0,
   }
 
   onSelectIndex(index) {
@@ -62,12 +63,12 @@ export class Root extends React.Component {
     }
   }
 
-
   render() {
     const theme = themeList[this.state.index].value
     const UI = withTheme(theme)
     return (
-      <UI>
+      <React.Fragment>
+        <ScrollTop />
         <Head>
           <title>Weimi-ui</title>
           <meta charSet="utf-8" />
@@ -76,42 +77,64 @@ export class Root extends React.Component {
           <meta name='description' content='React styled-components built with theming' />
           <meta name='keywords' content='components,react-component,theme,design-system,presentational' />
         </Head>
-        <Layout>
-          <Layout.NavBar css='justify-content: flex-end;'>
-            <ActionRoot>
-              {themeList.map((t, i) =>
-                <Action onClick={this.onSelectIndex(i)}
-                        disabled={i == this.state.index}
-                        key={i}>{t.name}
-                </Action>
-              )}
-            </ActionRoot>
-          </Layout.NavBar>
-          <Layout.MenuToggle />
-          <Layout.Sidebar py='48px' bg='navBg'>
-            <NavLinks
-              filter={route => nav.includes(route.name)}
-              order={nav}
-            {...this.props} />
-            <NavLink
-              to='https://github.com/youngboy/weimi-ui'
-              children='GitHub'
-            />
-          </Layout.Sidebar>
-          <Layout.Main>
+        <UI>
+          <Layout>
+            <Layout.NavBar css='justify-content: flex-end;'>
+              <ActionRoot>
+                {themeList.map((t, i) =>
+                  <Action onClick={this.onSelectIndex(i)}
+                          disabled={i == this.state.index}
+                          p='0.3rem 1rem'
+                          key={i}>{t.name}
+                  </Action>
+                )}
+              </ActionRoot>
+            </Layout.NavBar>
+            <Layout.MenuToggle />
+            <Layout.Sidebar py='48px' bg='lightgray'>
+              <NavLinks
+                filter={route => nav.includes(route.name)}
+                order={nav}
+              {...this.props} />
+              <NavLink
+                to='https://github.com/youngboy/weimi-ui'
+                children='GitHub'
+              />
+            </Layout.Sidebar>
+            <Layout.Main>
               {this.props.children}
-            {/* <Pagination {...this.props} /> */}
-          </Layout.Main>
-          <ScrollTop />
-        </Layout>
-      </UI>
-
+              {/* <Pagination {...this.props} /> */}
+            </Layout.Main>
+          </Layout>
+        </UI>
+      </React.Fragment>
     )
   }
 }
 
+const createHeading = (defaultProps = {}) => {
+  const H = styled(Heading)``
+  H.defaultProps = defaultProps
+  return H
+}
+const h1 = createHeading({ as: 'h1', variant: 'h1'})
+const h2 = createHeading({ as: 'h2', variant: 'h2'})
+const h3 = createHeading({ as: 'h3', variant: 'h3'})
+const h4 = createHeading({ as: 'h4', variant: 'h4'})
+const h5 = createHeading({ as: 'h5', variant: 'h5'})
+const h6 = createHeading({ as: 'h6', variant: 'h6'})
+
 export const Page = ({ children }) => {
-  return <ComponentProvider components={components}>
+  return <ComponentProvider components={{
+    ...components,
+    a: Link,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+  }}>
     {children}
   </ComponentProvider>
 }
@@ -151,7 +174,7 @@ function getStyleProps(src, theme) {
     {themeTable.map((p) => <tr key={p.key}>
       <td>{p.key}</td>
       <td>
-        <ul style={{marginTop: 0, listStyle: 'none', paddingLeft: 0}} >
+        <ul style={{marginTop: 0, listStyle: 'none', paddingLeft: 0, marginBottom: 0}} >
           {p.props.map(i => <li key={i}><code>{i}</code></li>)}
         </ul>
       </td>

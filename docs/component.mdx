@@ -3,8 +3,9 @@ import {
   Heading,
   Link,
   Preset,
-  theme
+  Global,
 } from '../src'
+import { BlankTheme } from '../src/theme'
 import { Page, ThemeInfo, ComponentDoc, PropsTable } from './layout'
 
 export default Page
@@ -15,9 +16,7 @@ export const name = 'Component'
 
 ## Button
 
-### Extends
-
-- `Box`
+Extends - `Box`
 
 ```.jsx
 <Button>Click</Button>
@@ -28,9 +27,7 @@ export const name = 'Component'
 
 ## Link
 
-### Extends
-
-- `Box`
+Extends - `Box`
 
 
 ```.jsx
@@ -41,13 +38,15 @@ export const name = 'Component'
 
 ## Heading
 
-### Extends
-
-- `Text`
+Extends - `Text`
 
 
 ```.jsx
-<Heading>Heading level 2</Heading>
+<Heading variant='h1'>Heading level 1</Heading>
+<Heading variant='h2'>Heading level 2</Heading>
+<Heading variant='h3'>Heading level 3</Heading>
+<Heading variant='h4'>Heading level 4</Heading>
+<Heading variant='h5'>Heading level 5</Heading>
 ```
 
 <PropsTable src={Heading} />
@@ -66,3 +65,12 @@ Preset is suppose to manage plain html tag styling in scoped div parent element.
 
 <PropsTable src={Preset} />
 
+## Global
+
+Global stylings, pickup from `theme.global`
+
+```jsx
+<Global />
+```
+
+<ThemeInfo name='global' theme={BlankTheme.global}  collapsed={false} />

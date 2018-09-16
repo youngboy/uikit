@@ -1,7 +1,13 @@
 import styled from 'styled-components'
+import {
+  space,
+  color,
+  width,
+  fontSize,
+  height,
+} from 'styled-system'
 
-import { Box } from '../primitive'
-import { themed, variant, injectDisplay } from '../utils'
+import { css, themed, variant, injectDisplay } from '../utils'
 
 
 const linkVariant = variant({
@@ -16,16 +22,28 @@ const linkStatusVariant = variant({
 
 const themedLink = themed('link.base')
 
-const Link = styled(Box)(
+const Link = styled('a')(
   themedLink,
   linkVariant,
-  linkStatusVariant
+  linkStatusVariant,
+
+  space,
+  color,
+  width,
+  fontSize,
+  height,
+  css
 )
 
 Link.displayName = 'Link'
 
 Link.propTypes = {
-  ...Box.propTypes,
+  ...space.propTypes,
+  ...color.propTypes,
+  ...width.propTypes,
+  ...fontSize.propTypes,
+  ...height.propTypes,
+  ...css.propTypes,
   ...injectDisplay({
     ...linkVariant.propTypes,
     ...linkStatusVariant.propTypes,
@@ -34,7 +52,6 @@ Link.propTypes = {
 }
 
 Link.defaultProps = {
-  as: 'a',
   variant: 'default'
 }
 

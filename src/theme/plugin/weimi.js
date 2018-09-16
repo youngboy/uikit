@@ -1,32 +1,36 @@
+import merge from 'lodash/merge'
 import createTheme from '../createTheme'
-import rockChoice from './rockChoice'
+import tachyonsChoice from './tachyonsChoice'
 
-const Rock = createTheme(rockChoice)
+const Weimi = createTheme(merge({}, tachyonsChoice, {
+  fonts: {
+    default: [
+      // system
+      '-apple-system',           // OSX ^10.11 & iOS ^9  苹方 & SF
+      'BlinkMacSystemFont',      // OSX chrome           苹方 & SF
+      // English first
+      '"Helvetica Neue"',        // OSX
+      'helvetica',               // Win
+      // chinese fallback
+      '"PingFang SC-Thin"',           // OSX ^10.11 & iOS ^9  苹方（华康信凭黑）
+      '"Microsoft YaHei"',      // Win                  微软雅黑
+      '"WenQuanYi Micro Hei"',   // Linux                文泉驿微米黑
+      'sans-serif'               // System Fallback
+    ].join(', ')
+  }
+}))
 
-export default Rock.extend((choice) => {
+export default Weimi.extend((choice) => {
   return {
     link: {
       base: {
         ...choice.hover.dim,
         textDecoration: 'none'
       },
-      variant: {
-        nav: {
-          display: 'block',
-          width: '100%',
-          textDecoration: 'none',
-          color: choice.colors.white,
-          padding: `${choice.space[2]} ${choice.space[3]}`,
-          fontSize: choice.fontSizes[5],
-          '&.active': {
-            color: choice.colors.pinks.hot
-          }
-        }
-      }
     },
     button: {
       base: {
-        ...choice.hover.dim
+        ...choice.hover.grow
       },
       variant: {
         default: {

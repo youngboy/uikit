@@ -7,7 +7,7 @@ const Go = createTheme({
     green: '#0d3',
     darkgreen: '#0a6',
     black: '#000619',
-    navBg: '#f6f6ff'
+    gray: '#f6f6ff'
   },
   fontSizes: {
     0: '12px',
@@ -30,6 +30,9 @@ const Go = createTheme({
     6: '128px',
     7: '256px',
     8: '512px'
+  },
+  fonts: {
+    default: '',
   }
 })
 
@@ -44,18 +47,6 @@ export default Go.extend((choice) => ({
           color: choice.colors.green,
         },
       },
-      nav: {
-        display: 'block',
-        width: '100%',
-        fontWeight: 'bold',
-        textDecoration: 'none',
-        color: 'inherit',
-        padding: `${choice.space[2]} ${choice.space[3]}`,
-        fontSize: choice.fontSizes[1],
-        '&.active': {
-          color: choice.colors.blue
-        }
-      }
     }
   },
   button: {
@@ -82,37 +73,32 @@ export default Go.extend((choice) => ({
       }
     }
   },
+  heading: {
+    base: {
+      marginTop: choice.space[4],
+      marginBottom: choice.space[2],
+    },
+    variant: {
+      h1: {
+        fontSize: choice.fontSizes[6],
+      },
+      h2: {
+        fontSize: choice.fontSizes[5],
+      },
+      h3: {
+        fontSize: choice.fontSizes[3],
+      },
+      h4: {
+        fontSize: choice.fontSizes[2],
+      },
+      h5: {
+        fontSize: choice.fontSizes[1],
+      },
+    }
+  },
   preset: {
     variant: {
       default: {
-        a: {
-          color: 'inherit'
-        },
-        h1: {
-          marginTop: choice.space[4],
-          marginBottom: choice.space[2],
-          fontSize: choice.fontSizes[6],
-        },
-        h2: {
-          marginTop: choice.space[4],
-          marginBottom: choice.space[2],
-          fontSize: choice.fontSizes[5],
-        },
-        h3: {
-          marginTop: choice.space[4],
-          marginBottom: choice.space[2],
-          fontSize: choice.fontSizes[3],
-        },
-        h4: {
-          marginTop: choice.space[4],
-          marginBottom: choice.space[2],
-          fontSize: choice.fontSizes[2],
-        },
-        h5: {
-          marginTop: choice.space[4],
-          marginBottom: choice.space[2],
-          fontSize: choice.fontSizes[1],
-        },
         img: {
           maxWidth: '100%',
           height: 'auto'

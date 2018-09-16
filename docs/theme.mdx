@@ -1,7 +1,7 @@
 import { Page, ThemeInfo } from './layout'
 
 import {
-  RockTheme,
+  TachyonsTheme,
   GoTheme,
   BlankTheme
 } from '../src/theme'
@@ -12,38 +12,44 @@ export const name = 'Theme'
 
 # Theme
 
-## Blank Theme
+## mdx-go
 
-Starter theme for implementing design system
-
-<ThemeInfo theme={BlankTheme} name='Blank' />
-
-## mdx-go Theme
-
-[mdx-go](https://jxnblk.com/mdx-go/)
-
+copy from [mdx-go](https://jxnblk.com/mdx-go/), just for simple theme for docments
 
 <ThemeInfo theme={GoTheme} name='Mdx-go' />
 
-## Rock Theme
+## Tachyons
 
-**Still working in progress**
+[Tachyons](https://tachyons.io/) doesn’t style component by default, but provides the necessary utils to generate a wide variety of component styles.
 
-<ThemeInfo theme={RockTheme} name='Rock' />
+<ThemeInfo theme={TachyonsTheme} name='Tachyons' />
 
+## Blank
+
+Starter theme for implementing your design system
+
+<ThemeInfo theme={BlankTheme} name='Blank' />
 
 ## Provider
+
+**WIP**
 
 ThemeProvider `withTheme`
 
 ## CreatTheme
 
+**WIP**
+
 Function to create new theme
 
 ## Choices
 
+**WIP**
+
 Choice
 
 ## Plugin
+
+**WIP**
 
 Plugins

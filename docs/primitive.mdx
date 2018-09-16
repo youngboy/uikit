@@ -27,22 +27,24 @@ Primitive are component mainly for layout and for other components which are bui
 Base component aollow to pass inline css props anytime
 
 ```.jsx
-<Base css='background: red'>base</Base>
+<Base css='background: pink; opacity: 0.5;'>base</Base>
 ```
 
 <ComponentDoc src={Base} />
 
 ## Box
 
-### Extends
-
-- `Base`
+Extends - `Base`
 
 ```.jsx
-<Box bg='red' width='50%'>box</Box>
-<Box mt={3} p={2} color='gold' fontSize='3'
-      width='25%'
-      bg='purple'>Hello</Box>
+<Box bg='orange' color='white' p={1} width={1}>100% Box</Box>
+<Box bg='orange' color='white' p={1} mt={3} width={1/2}>1/2 Box</Box>
+<Box bg='orange' color='white' p={1} mt={3} width={1/4}>1/4 Box</Box>
+<Box bg='orange' color='white' p={1} mt={3} width={1/8}>1/8 box</Box>
+<Box mt={3} mx='auto' p={1} color='gold' fontSize='3'
+      width='25rem'
+      textAlign='center'
+      bg='purple'>25rem Box</Box>
 ```
 
 <ComponentDoc src={Box} />
@@ -53,15 +55,19 @@ Base component aollow to pass inline css props anytime
 
 Responsive flexbox layout component
 
-### Extends
-
-- `Box`
+Extends - `Box`
 
 ```.jsx
-<Flex>
-  <Flex justifyContent='center' bg='red' mr='1px' flex={1}>1</Flex>
-  <Flex justifyContent='center' bg='red' mr='1px' flex={2}>1</Flex>
-  <Flex justifyContent='center' bg='red' mr='1px' flex={4}>1</Flex>
+<Flex alignItems='center'>
+  <Flex bg='orange' width={1/4} p='3' mr='2' mt='2' css='align-self: flex-end;'>1</Flex>
+  <Flex width={1/4} flexDirection='column-reverse'>
+    <Flex bg='orange' p='3' mr='2' mt='2'>1</Flex>
+    <Flex bg='orange' p='3' mr='2' mt='2'>2</Flex>
+    <Flex bg='orange' p='3' mr='2' mt='2'>3</Flex>
+    <Flex bg='orange' p='3' mr='2'>4</Flex>
+  </Flex>
+  <Flex bg='orange' width={1/4} p='3' ml='2' css='align-self: flex-center;'>1</Flex>
+  <Flex bg='orange' width={1/4} p='3' ml='2' css='align-self: flex-start;'>2</Flex>
 </Flex>
 ```
 
@@ -70,13 +76,11 @@ Responsive flexbox layout component
 
 ## Position
 
-### Extends
-
-- `Box`
+Extends - `Box`
 
 ```.jsx
 <Box bg='black'>
-  <Relative left='10px' top='10px' width='50px' height='50px' bg='red' />
+  <Relative left='10px' top='10px' width='50px' height='50px' bg='orange' />
 </Box>
 ```
 

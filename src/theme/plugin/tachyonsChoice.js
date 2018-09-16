@@ -9,7 +9,7 @@ import hover from './hover'
 //   5: '16rem',
 // }
 
-const rockChoice = {
+const tachyonsChoice = {
   hover,
   fontSizes: {
     1: '3rem',
@@ -30,7 +30,8 @@ const rockChoice = {
     subheadline: '5rem',
   },
   colors: {
-    navBg: 'rgb(30, 32, 41)',
+    default: 'rgba(0,0,0,.7)',
+    lightgray: '#f3f3f3',
     black: '#000',
     blacks: {
       near: '#111',
@@ -117,6 +118,7 @@ const rockChoice = {
     navy: '#001b44',
   },
   fonts: {
+    default: '-apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
     courier: '"Courier Next", courier, monospace',
     /* Sans-Serif Typefaces (without .) */
     helvetica: '"helvetica neue", helvetica, sans-serif',
@@ -172,4 +174,4 @@ const rockChoice = {
   }
 }
 
-export default rockChoice
+export default tachyonsChoice

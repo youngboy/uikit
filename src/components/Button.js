@@ -1,7 +1,13 @@
 import styled from 'styled-components'
+import {
+  space,
+  color,
+  width,
+  fontSize,
+  height,
+} from 'styled-system'
 
-import { themed, variant, injectDisplay } from '../utils'
-import { Box } from '../primitive'
+import { css, themed, variant, injectDisplay } from '../utils'
 
 
 const buttonVariant = variant({
@@ -16,16 +22,28 @@ const buttonSize = variant({
 
 const themedButton = themed('button.base')
 
-const Button = styled(Box)(
+const Button = styled('button')(
   themedButton,
   buttonVariant,
-  buttonSize
+  buttonSize,
+
+  space,
+  color,
+  width,
+  fontSize,
+  height,
+  css
 )
 
 Button.displayName = 'Button'
 
 Button.propTypes = {
-  ...Box.propTypes,
+  ...space.propTypes,
+  ...color.propTypes,
+  ...width.propTypes,
+  ...fontSize.propTypes,
+  ...height.propTypes,
+  ...css.propTypes,
   ...injectDisplay({
     ...buttonVariant.propTypes,
     ...buttonSize.propTypes,
@@ -34,7 +52,6 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-  as: 'button',
   variant: 'default',
   btnSize: 'default'
 }
