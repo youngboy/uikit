@@ -1,11 +1,31 @@
-# UIkit
+# Weimi-ui
 
-UIkit is set of react component that highly customize-able
+Weimi-ui is set of react component that highly customize-able
 
 - Theme support, generated from design token
 - Compostable with props inherit
 - Convenient props accessiable
 - Accessiability feature enable
+
+## Getting started
+
+```bash
+npm i @weimi/ui
+```
+
+```jsx
+import { withTheme, GoTheme } from '@weimi/ui/theme'
+import { Box } from '@weimi/ui'
+
+const UI = withTheme(GoTheme)
+
+function App() {
+  return <UI>
+    <Box bg='black' color='white'>Hello world</Box>
+  </UI>
+}
+```
+
 
 ## Primitive
 

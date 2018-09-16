@@ -1,10 +1,32 @@
 {
-  "name": "uikit",
+  "name": "@weimi/ui",
   "version": "1.0.0",
   "author": "youngboy",
   "license": "MIT",
   "private": false,
   "main": "dist/index.js",
+  "sideEffects": false,
+  "description": "React styled-components built with theming",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youngboy/uikit"
+  },
+  "bugs": {
+    "url": "https://github.com/youngboy/uikit/issues"
+  },
+  "keywords": [
+    "components",
+    "react",
+    "react-component",
+    "ui",
+    "design-system",
+    "styled-system",
+    "styled-components",
+    "presentational",
+    "stateless",
+    "functional"
+  ],
+  "homepage": "https://weimi-ui.netlify.com",
   "scripts": {
     "prepare": "npm run clean && npm run build",
     "clean": "rm -rf dist && mkdir dist",

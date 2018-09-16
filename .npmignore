@@ -1,0 +1,10 @@
+docs
+.eslintrc.js
+.nyc_output
+benchmarks
+test
+src
+examples
+babel.config.js
+yarn.lock
+.vscode

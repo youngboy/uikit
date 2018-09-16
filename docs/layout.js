@@ -85,7 +85,7 @@ export class Root extends React.Component {
               order={nav}
             {...this.props} />
             <NavLink
-              to='https://github.com/youngboy/uikit'
+              to='https://github.com/youngboy/weimi-ui'
               children='GitHub'
             />
           </Layout.Sidebar>
