@@ -2,7 +2,8 @@ import React from 'react'
 import {
   Pagination,
   ScrollTop,
-  ComponentProvider
+  ComponentProvider,
+  Head,
 } from 'mdx-go'
 import styled, { ThemeConsumer } from 'styled-components'
 // import ReactJson from 'react-json-view'
@@ -67,6 +68,14 @@ export class Root extends React.Component {
     const UI = withTheme(theme)
     return (
       <UI>
+        <Head>
+          <title>Weimi-ui</title>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+          <meta name='description' content='React styled-components built with theming' />
+          <meta name='keywords' content='components,react-component,theme,design-system,presentational' />
+        </Head>
         <Layout>
           <Layout.NavBar css='justify-content: flex-end;'>
             <ActionRoot>
